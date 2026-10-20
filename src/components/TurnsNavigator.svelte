@@ -83,7 +83,7 @@
                 <span class="turn-badge badge-done">Done</span>
               {/if}
               {#if turn.duration_str || formatDuration(turn.timestamp, turn.ended_at)}
-                <span class="turn-badge badge-duration" title="Durata turno: {turn.duration_str || formatDuration(turn.timestamp, turn.ended_at)}">
+                <span class="turn-badge badge-duration" title="Turn duration: {turn.duration_str || formatDuration(turn.timestamp, turn.ended_at)}">
                   ⏱️ {turn.duration_str || formatDuration(turn.timestamp, turn.ended_at)}
                 </span>
               {/if}
@@ -91,7 +91,7 @@
             <div class="turn-time-group">
               <span class="turn-time">{formatLocalTime(turn.timestamp)}</span>
               {#if turn.ended_at && turn.ended_at !== turn.timestamp}
-                <span class="turn-ended-time" title="Finito alle {formatLocalTime(turn.ended_at)}">→ {formatLocalTime(turn.ended_at)}</span>
+                <span class="turn-ended-time" title="Finished at {formatLocalTime(turn.ended_at)}">→ {formatLocalTime(turn.ended_at)}</span>
               {/if}
             </div>
           </div>

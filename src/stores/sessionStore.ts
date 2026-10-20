@@ -38,9 +38,9 @@ export function updateStatus() {
   const isLatest = sessList.length > 0 && sessList[0].session_uuid === curSel;
   
   if (s.total_steps > 0) {
-    statusMsg.set(`${isLatest ? "Live" : "Archivio"} • ${s.total_steps} passaggi`);
+    statusMsg.set(`${isLatest ? "Live" : "Archive"} • ${s.total_steps} steps`);
   } else {
-    statusMsg.set(isLatest ? "Live" : "Pronto");
+    statusMsg.set(isLatest ? "Live" : "Ready");
   }
 }
 
@@ -215,12 +215,12 @@ export async function switchSession(targetUuid: string): Promise<void> {
       if (res.sessions) sessions.set(toArray(res.sessions));
       selectedSessionId.set(res.current_session_id || res.selected_session || targetUuid);
       updateStatus();
-      showToast(`Conversazione: ${targetUuid.slice(0, 8)}`);
+      showToast(`Switched to: ${targetUuid.slice(0, 8)}`);
     } else {
-      showToast("Nessun dato per la conversazione");
+      showToast("No data for this conversation");
     }
   } catch (err: any) {
-    showToast(`Errore switch: ${err?.message || err}`);
+    showToast(`Switch failed: ${err?.message || err}`);
   } finally {
     isLoadingSession.set(false);
   }

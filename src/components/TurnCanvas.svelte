@@ -221,13 +221,13 @@
               <div class="turn-timing-group">
                 <span class="timing-chip" title="Started at">
                   <Icon name="clock" size={11} color="#9aa0a6" />
-                  <span>Iniziato: <b>{formatLocalTime(selectedTurn.timestamp)}</b></span>
+                  <span>Started: <b>{formatLocalTime(selectedTurn.timestamp)}</b></span>
                 </span>
                 {#if selectedTurn.status === 'completed'}
                   <span class="time-arrow">→</span>
                   <span class="timing-chip ended-chip" title="Finished at">
                     <Icon name="check" size={11} color="#81c995" />
-                    <span>Finito: <b>{formatLocalTime(selectedTurn.ended_at || (turnEvents[turnEvents.length - 1] && turnEvents[turnEvents.length - 1].timestamp) || selectedTurn.timestamp)}</b></span>
+                    <span>Ended: <b>{formatLocalTime(selectedTurn.ended_at || (turnEvents[turnEvents.length - 1] && turnEvents[turnEvents.length - 1].timestamp) || selectedTurn.timestamp)}</b></span>
                   </span>
                   {#if selectedTurn.duration_str || formatDuration(selectedTurn.timestamp, selectedTurn.ended_at)}
                     <span class="duration-badge font-mono" title="Turn duration">
@@ -236,7 +236,7 @@
                   {/if}
                 {:else}
                   <span class="duration-badge live-duration font-mono" title="Running duration">
-                    ⏱️ in corso ({formatDuration(selectedTurn.timestamp)})
+                    ⏱️ In progress ({formatDuration(selectedTurn.timestamp)})
                   </span>
                 {/if}
               </div>

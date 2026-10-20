@@ -1,0 +1,9 @@
+node_modules/
+dist/
+build/
+target/
+.DS_Store
+*.log
+reports/*.md
+reports/*.json
+!reports/.gitkeep

@@ -1,0 +1,31 @@
+{
+  "identifier": "com.lua-tauri-svelte.app",
+  "app": {
+    "security": {
+      "capabilities": [
+        "core:default",
+        "fs:read-text-file",
+        "fs:write-text-file",
+        "dialog:open",
+        "dialog:message"
+      ]
+    },
+    "windows": [
+      {
+        "title": "Antigravity Agent Cockpit",
+        "width": 1280,
+        "height": 820,
+        "resizable": true
+      }
+    ]
+  },
+  "version": "0.1.0",
+  "build": {
+    "frontendDist": "../dist",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:5173"
+  },
+  "productName": "Antigravity Agent Cockpit",
+  "$schema": "../schemas/tauri-lua.schema.json"
+}

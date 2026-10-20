@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -e
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ENGINE_PATH="${TAURI_LUA_ROOT}"
+
+if [ -z "$ENGINE_PATH" ] || [ ! -d "$ENGINE_PATH" ]; then
+    if [ -d "$PROJECT_DIR/../lua-tauri" ] && [ -f "$PROJECT_DIR/../lua-tauri/lua-tauri" ]; then
+        ENGINE_PATH="$(cd "$PROJECT_DIR/../lua-tauri" && pwd)"
+    elif [ -f "$PROJECT_DIR/../lua-tauri" ]; then
+        ENGINE_PATH="$(cd "$PROJECT_DIR/.." && pwd)"
+    fi
+fi
+
+if [ -z "$ENGINE_PATH" ] || [ ! -f "$ENGINE_PATH/lua-tauri" ]; then
+    echo "Info: Tauri-Lua engine not found in TAURI_LUA_ROOT or ../lua-tauri."
+    echo "Info: Auto-cloning engine from https://github.com/MoxPy/lua-tauri.git ..."
+    git clone https://github.com/MoxPy/lua-tauri.git "$PROJECT_DIR/../lua-tauri"
+    ENGINE_PATH="$(cd "$PROJECT_DIR/../lua-tauri" && pwd)"
+fi
+
+if [ -z "$ENGINE_PATH" ] || [ ! -f "$ENGINE_PATH/lua-tauri" ]; then
+    echo "Error: Could not locate Tauri-Lua engine. Set TAURI_LUA_ROOT."
+    exit 1
+fi
+
+export TAURI_LUA_ROOT="$ENGINE_PATH"
+exec "$ENGINE_PATH/lua-tauri" "$@"

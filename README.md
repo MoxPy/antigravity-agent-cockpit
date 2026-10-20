@@ -25,6 +25,25 @@ Built on the blazing-fast [**Tauri-Lua**](https://github.com/MoxPy/lua-tauri) ar
 
 ---
 
+## Screenshots & Interface
+
+### 1. Granular Log & Deep Operation Inspector
+> Real-time streaming log of every individual model thought, terminal execution, file inspection, and user interaction.
+
+![Granular Log](docs/screenshots/01-granular-log.png)
+
+### 2. Turn Situation & Mission Control
+> Complete conversation timeline stepper with multi-density execution canvas, live duration tracking, and instant step parameters inspection.
+
+![Turn Situation](docs/screenshots/02-turn-situation.png)
+
+### 3. Perimeter & Cybersecurity Audit Radar
+> Proactive defense engine flagging prompt injection attempts, directory boundary escapes, exposed secrets, and outbound network calls.
+
+![Security & Perimeter Audit](docs/screenshots/03-security-audit.png)
+
+---
+
 ## Platform Support
 
 * **macOS (Apple Silicon & Intel)**: **Fully Supported & Tested (Tier 1)**. Native WKWebView, Cocoa bundle integration, and codesigning.

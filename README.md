@@ -8,7 +8,7 @@
   <a href="#platform-support"><img src="https://img.shields.io/badge/Platform-macOS%20(Primary)-blue.svg?style=for-the-badge" alt="Platform"></a>
   <a href="#key-features"><img src="https://img.shields.io/badge/Status-Production%20Ready%20(macOS)-brightgreen.svg?style=for-the-badge" alt="Status"></a>
   <a href="#architecture"><img src="https://img.shields.io/badge/Engine-LuaJIT%202.1%20%2B%20Svelte%204-orange.svg?style=for-the-badge" alt="Engine"></a>
-  <a href="#architecture"><img src="https://img.shields.io/badge/Runtime-Tauri--Lua%20(Native%20Webview)-blue.svg?style=for-the-badge" alt="Runtime"></a>
+  <a href="https://github.com/MoxPy/lua-tauri"><img src="https://img.shields.io/badge/Runtime-Tauri--Lua%20(Native%20Webview)-blue.svg?style=for-the-badge" alt="Runtime"></a>
   <a href="#ultra-lightweight-footprint"><img src="https://img.shields.io/badge/App%20Size-~2.4%20MB-success.svg?style=for-the-badge" alt="Size"></a>
   <a href="#license"><img src="https://img.shields.io/badge/License-MIT-purple.svg?style=for-the-badge" alt="License"></a>
 </p>
@@ -21,14 +21,14 @@ When autonomous AI coding agents execute terminal commands, modify source files,
 
 **Antigravity Agent Cockpit** is a native, ultra-lightweight desktop control center purpose-built for **Google Antigravity**. It connects directly to the agent's runtime trajectory, providing **sub-millisecond flight telemetry**, **deep reasoning introspection**, and a **proactive cybersecurity rules engine** that audits every single agent action in real time.
 
-Built on the blazing-fast **Tauri-Lua** architecture (native system webview + LuaJIT 2.1), Cockpit launches in **< 150ms** and consumes **< 40MB RAM**—offering a native desktop experience without the overhead of heavy Electron apps.
+Built on the blazing-fast [**Tauri-Lua**](https://github.com/MoxPy/lua-tauri) architecture (native system webview + LuaJIT 2.1), Cockpit launches in **< 150ms** and consumes **< 40MB RAM**—offering a native desktop experience without the overhead of heavy Electron apps.
 
 ---
 
 ## Platform Support
 
 * **macOS (Apple Silicon & Intel)**: **Fully Supported & Tested (Tier 1)**. Native WKWebView, Cocoa bundle integration, and codesigning.
-* **Linux**: **Experimental / In Progress**. Supported by the Tauri-Lua WebKitGTK runtime; shell hooks and directory discovery are being normalized.
+* **Linux**: **Experimental / In Progress**. Supported by the [Tauri-Lua](https://github.com/MoxPy/lua-tauri) WebKitGTK runtime; shell hooks and directory discovery are being normalized.
 * **Windows**: **Planned Roadmap**. Dependent on WebView2 bindings and POSIX syscall abstractions.
 
 ---
@@ -37,7 +37,7 @@ Built on the blazing-fast **Tauri-Lua** architecture (native system webview + Lu
 
 The complete standalone macOS application weighs only **~2.4 MB** (with a **2.2 MB** DMG installer).
 
-This featherweight size and instant startup are made possible thanks to **Tauri-Lua** and **Svelte**, delivering a full-featured desktop control center without the hundreds of megabytes typical of other desktop apps.
+This featherweight size and instant startup are made possible thanks to [**Tauri-Lua**](https://github.com/MoxPy/lua-tauri) and **Svelte**, delivering a full-featured desktop control center without the hundreds of megabytes typical of other desktop apps.
 
 ---
 
